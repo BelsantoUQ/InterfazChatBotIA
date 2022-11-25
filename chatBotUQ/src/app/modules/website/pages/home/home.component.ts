@@ -18,12 +18,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private chatService: ChatService
   ) { }
-
   ngOnInit(): void {
-
   }
-
-
   sendQuestion(){
 
     this.conversationList.unshift({question:this.newQuestion.value+"", answer:'Escribiendo...', date: new Date() + ""})
