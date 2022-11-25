@@ -1,0 +1,48 @@
+<div class="container-fluid h-100">
+  <div class="row justify-content-center h-100">
+    <div class="col-md-12 col-xl-9 chat">
+      <div class="card">
+        <div class="card-header msg_head">
+          <div class="d-flex bd-highlight">
+            <div class="img_cont">
+              <img src="../../../../../assets/images/ia.png" class="rounded-circle user_img">
+              <span class="online_icon"></span>
+            </div>
+            <div class="user_info">
+              <span>Chatea con Belsabia</span>
+              <p>Habla o pregunta lo que quieras</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card-footer">
+          <div class="input-group">
+
+            <input name="" class="form-control type_msg" placeholder="Type your message..." [formControl]="newQuestion"/>
+            <div class="input-group-append">
+              <span (click)="sendQuestion()" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body msg_card_body">
+          <section *ngFor="let conversacion of conversationList">
+
+          <app-message-answer
+          [answer]="conversacion.answer+' '">
+          </app-message-answer>
+
+          <app-message-question
+          [question]="conversacion.question"
+          [fecha]="conversacion.date">
+          </app-message-question>
+
+        </section>
+        <div class="bottomMessage">Inicio</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

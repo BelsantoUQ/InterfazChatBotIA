@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-start mb-4">
+  <div class="img_cont_msg">
+    <app-img [img]="foto" >
+
+    </app-img>
+  </div>
+  <div class="msg_cotainer" [ngStyle]="{'width': size+'ch', 'display': 'block', 'white-space': 'nowrap', 'border-right': '0px solid',
+   'animation': 'typing 2s steps('+size+'), blink .5s infinite step-end alternate', 'overflow': 'hidden'}">
+    {{answer}}
+  </div>
+</div>
