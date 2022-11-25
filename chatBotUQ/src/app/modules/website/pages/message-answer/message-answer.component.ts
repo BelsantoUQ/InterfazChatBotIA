@@ -8,7 +8,7 @@ import { Component, Input, EventEmitter, OnInit} from '@angular/core';
 export class MessageAnswerComponent implements OnInit {
 
 
-  @Input() answer: string = "Esta es una respuesta de prueba";
+  @Input() answer: string = "";
   foto = "../../../../../assets/images/ia.png"
   size = 3;
   constructor() { }

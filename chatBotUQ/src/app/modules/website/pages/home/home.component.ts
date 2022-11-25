@@ -11,7 +11,7 @@ import { ChatService } from 'src/app/services/chat.service';
 export class HomeComponent implements OnInit {
 
   newQuestion = new FormControl('');
-  newAnswer ="";
+  newAnswer ="Escribiendo...";
   conversationList:Conversation[] =[{question:'Hola y gracias',answer:'Con gusto', date: '2022-11-23 00:00:00'}];
 
 
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   sendQuestion(){
 
-    this.conversationList.unshift({question:this.newQuestion.value+"", answer:'', date: new Date() + ""})
+    this.conversationList.unshift({question:this.newQuestion.value+"", answer:'Escribiendo...', date: new Date() + ""})
     this.chatService.getAnswer(this.newQuestion.value+"").subscribe(data=>{
       this.newAnswer = data;
       this.conversationList[0].answer =this.newAnswer;
